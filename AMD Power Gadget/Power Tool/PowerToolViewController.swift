@@ -192,17 +192,17 @@ class PowerToolViewController: NSViewController, NSWindowDelegate {
         basicLabel.stringValue = """
         \(ProcessorModel.shared.systemConfig["cpu"]!)
         Family: \(String(format:"%02X", id[0]))h, Model: \(String(format:"%02X", id[1]))h
-        Physical: \(id[2]), Logical: \(id[3])
+        核心: \(id[2]), 线程: \(id[3])
         L1(Total): \(id[4] * id[2]) KB, L2(Total): \(id[5] * id[2] / 1024) MB, L3(Shared): \(id[6] / 1024) MB
         
-        Motherboard: \(ProcessorModel.shared.boardName)
+        主板: \(ProcessorModel.shared.boardName)
         \(ProcessorModel.shared.boardVender)
-        Graphics: \(ProcessorModel.shared.systemConfig["gpu"]!)
-        Memory: \(memGB)GB, Storage: \(storageGB)GB
+        显卡: \(ProcessorModel.shared.systemConfig["gpu"]!)
+        内存: \(memGB)GB, 存储: \(storageGB)GB
         
-        macOS Version: \(ProcessorModel.shared.systemConfig["os"]!)
+        macOS 版本: \(ProcessorModel.shared.systemConfig["os"]!)
         AMDRyzenCPUPowerManagement:
-          Version: \(ProcessorModel.shared.AMDRyzenCPUPowerManagementVersion), CPU Supported: \(supported)
+          版本: \(ProcessorModel.shared.AMDRyzenCPUPowerManagementVersion), CPU 支持: \(supported)
         
         """
         if ProcessorModel.shared.boardValid {
