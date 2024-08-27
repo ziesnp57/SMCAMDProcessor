@@ -180,15 +180,15 @@ class StatusbarController {
         guard let m = menu else {return}
         var item = NSMenuItem(title: "AMD Power Gadget", action: #selector(gadget), keyEquivalent: ""); item.target = self
         m.addItem(item)
-        item = NSMenuItem(title: "AMD Power Tool", action: #selector(tool), keyEquivalent: ""); item.target = self
+        item = NSMenuItem(title: "AMD 工具", action: #selector(tool), keyEquivalent: ""); item.target = self
         m.addItem(item)
-        item = NSMenuItem(title: "SMC Fans", action: #selector(fans), keyEquivalent: ""); item.target = self
+        item = NSMenuItem(title: "SMC 风扇", action: #selector(fans), keyEquivalent: ""); item.target = self
         m.addItem(item)
         
         
         m.addItem(NSMenuItem.separator())
         
-        item = NSMenuItem(title: "Exit", action: #selector(exitApp), keyEquivalent: ""); item.target = self
+        item = NSMenuItem(title: "退出", action: #selector(exitApp), keyEquivalent: ""); item.target = self
         m.addItem(item)
         
 //        statusItem.menu = menu
