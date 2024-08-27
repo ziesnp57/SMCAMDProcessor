@@ -31,8 +31,8 @@ class ProcessorModel {
     var AMDRyzenCPUPowerManagementVersion : String = ""
     var cpuidBasic : [UInt64] = []
     var boardValid = false
-    var boardName : String = "Unknown"
-    var boardVender : String = "Unknown"
+    var boardName : String = "未知"
+    var boardVender : String = "未知"
     
     var fetchRetry : Int = 10
     var fetchRetry2 : Int = 10
@@ -40,7 +40,7 @@ class ProcessorModel {
     
     init() {
         if !initDriver() {
-            alertAndQuit(message: "Please download AMDRyzenCPUPowerManagement from the release page.")
+            alertAndQuit(message: "请从发布页面下载AMDRyzenCPUPowerManagement")
         }
         
         var scalerOut: UInt64 = 0
@@ -62,7 +62,7 @@ class ProcessorModel {
         }
         
         if !latestMajorVers.contains(AMDRyzenCPUPowerManagementVersion){
-            alertDontQuit(message: "There are updates available for AMDRyzenCPUPowerManagement. Update to the latest version for more feature and stability.")
+            alertDontQuit(message: "AMDRyzenCPUPowerManagement有可用的更新。更新到最新版本，以获得更多功能和稳定性")
         }
         
         loadCPUID()
@@ -75,10 +75,10 @@ class ProcessorModel {
         
         if numberOfCores < 1{
             let alert = NSAlert()
-            alert.messageText = "Error reading CPU data."
-            alert.informativeText = "This application can not be launched due to AMDRyzenCPUPowerManagement is reporting incorrect data."
+            alert.messageText = "读取CPU数据时出错"
+            alert.informativeText = "由于AMDRyzenCPUPowerManagement报告了错误的数据，应用程序无法启动"
             alert.alertStyle = .critical
-            alert.addButton(withTitle: "Quit")
+            alert.addButton(withTitle: "退出")
             alert.runModal()
             NSApplication.shared.terminate(self)
         }
@@ -105,7 +105,7 @@ class ProcessorModel {
     
     func alertAndQuit(message : String){
         let alert = NSAlert()
-        alert.messageText = "No AMDRyzenCPUPowerManagement Found!"
+        alert.messageText = "未找到AMDRyzenCPUPowerManagement"
         alert.informativeText = message
         alert.alertStyle = .critical
         alert.addButton(withTitle: "Quit")
