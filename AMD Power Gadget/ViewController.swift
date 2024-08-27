@@ -122,7 +122,7 @@ class ViewController: NSViewController, NSWindowDelegate {
         frequencyGraphView.addData(forline: freqMaxLine, x: relTime, y: maxFre)
         frequencyGraphView.addData(forline: freqLine, x: relTime, y: meanFre)
         
-        frequencyLabel.stringValue = String(format: "Average of %d Cores: %.2f Ghz, Max: %.2f Ghz", numberOfCores, meanFre * 0.001, frequencies.max()! * 0.001)
+        frequencyLabel.stringValue = String(format: "平均 %d 核心: %.2f Ghz, Max: %.2f Ghz", numberOfCores, meanFre * 0.001, frequencies.max()! * 0.001)
 
 
         temperatureLabel.stringValue = String(format: "%.2f °C", temperature)
@@ -139,7 +139,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        NSWorkspace.shared.open(URL(string: "https://github.com/trulyspinach/SMCAMDProcessor")!)
+        NSWorkspace.shared.open(URL(string: "https://github.com/ziesnp57/SMCAMDProcessor")!)
     }
     
     
