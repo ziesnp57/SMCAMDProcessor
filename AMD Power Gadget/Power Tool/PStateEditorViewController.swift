@@ -172,8 +172,8 @@ class PStateEditorViewController: NSViewController, NSTableViewDelegate, NSTable
         alert.messageText = "Your changes will not be saved"
         alert.informativeText = "Click apply to save changes before closing this windows."
         alert.alertStyle = .warning
-        alert.addButton(withTitle: "Cancel")
-        alert.addButton(withTitle: "Close without saving")
+        alert.addButton(withTitle: "取消")
+        alert.addButton(withTitle: "关闭“)
         alert.beginSheetModal(for: view.window!) { (res) in
             if res == NSApplication.ModalResponse.alertSecondButtonReturn {
                 self.closeActually()
